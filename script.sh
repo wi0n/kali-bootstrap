@@ -1,6 +1,7 @@
 #!/bin/zsh
 # basic stuff
-sudo apt install terminator git python3-dev krb5-user cifs-utils faketime -y
+sudo apt install terminator git python3-dev faketime -y
+sudo DEBIAN_FRONTEND=noninteractive apt install -y krb5-user cifs-utils
 # docker compose
 sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
