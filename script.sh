@@ -1,6 +1,7 @@
 #!/bin/zsh
 # basic stuff
-sudo apt install terminator git python3-dev faketime -y
+sudo apt update
+sudo apt install tmux curl terminator git python3-dev faketime -y
 sudo DEBIAN_FRONTEND=noninteractive apt install -y krb5-user cifs-utils
 # docker compose
 sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
@@ -61,4 +62,4 @@ echo " Ready!"
 
 '
 sg docker -c 'echo $(docker logs $(docker ps -qf "ancestor=specterops/bloodhound:latest") | grep -i "initial password") | cut -d# -f2'
-echo "run: source ~/.zshrc"
+source ~/.zshrc
