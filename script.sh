@@ -59,7 +59,6 @@ until curl -s -f http://localhost:8888 >/dev/null 2>&1; do
 done
 echo " Ready!"
 
-~/bloodhound/bloodhound-cli config get default_password | tee -a ~/bloodhound/default_password
 '
 sg docker -c 'echo $(docker logs $(docker ps -qf "ancestor=specterops/bloodhound:latest") | grep -i "initial password") | cut -d# -f2'
 echo "run: source ~/.zshrc"
