@@ -4,6 +4,7 @@ sudo apt install terminator git python3-dev faketime -y
 sudo DEBIAN_FRONTEND=noninteractive apt install -y krb5-user cifs-utils
 # docker compose
 sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
+sudo apt install build-essential pkg-config libssl-dev libkrb5-dev libclang-dev clang libgssapi-krb5-2 -y
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian bullseye stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update
@@ -37,7 +38,6 @@ sed -i 's/^plugins=(git)$/plugins=(git zsh-syntax-highlighting zsh-autosuggestio
 sed -i 's/robbyrussell/minimal/g' ~/.zshrc
 
 # rusthound
-sudo apt install build-essential pkg-config libssl-dev libkrb5-dev libclang-dev clang libgssapi-krb5-2 -y
 cargo install rusthound-ce
 echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.zshrc
 
